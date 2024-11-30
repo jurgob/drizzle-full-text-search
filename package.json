@@ -1,0 +1,32 @@
+{
+  "name": "drizzle-cli-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "db:gen": "drizzle-kit generate",
+    "test": "vitest run . --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@electric-sql/pglite": "^0.2.14",
+    "commander": "^12.1.0",
+    "drizzle-orm": "^0.36.4",
+    "fuzzysearch": "^1.0.3",
+    "pg": "^8.13.1",
+    "pg-lite": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/fuzzysearch": "^1.0.2",
+    "@types/node": "^22.10.1",
+    "@types/pg": "^8.11.10",
+    "@vitest/coverage-v8": "^2.1.6",
+    "drizzle-kit": "^0.28.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.6"
+  }
+}
