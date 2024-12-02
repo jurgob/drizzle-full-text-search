@@ -1,1 +1,0 @@
-ALTER TABLE "cases" ADD COLUMN "content_search" "tsvector" GENERATED ALWAYS AS (to_tsvector('english', "cases"."vin" || ' ' || "cases"."name" || ' ' || "cases"."surname")) STORED;

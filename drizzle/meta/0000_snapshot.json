@@ -1,5 +1,5 @@
 {
-  "id": "08f94fd9-86a9-4a9b-abc6-469499be7ea9",
+  "id": "fe516668-c81b-49b4-8a38-72f98731e833",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -31,6 +31,16 @@
           "type": "varchar(50)",
           "primaryKey": false,
           "notNull": true
+        },
+        "content_search": {
+          "name": "content_search",
+          "type": "tsvector",
+          "primaryKey": false,
+          "notNull": false,
+          "generated": {
+            "as": "to_tsvector('english', \"cases\".\"vin\" || ' ' || \"cases\".\"name\" || ' ' || \"cases\".\"surname\")",
+            "type": "stored"
+          }
         }
       },
       "indexes": {},

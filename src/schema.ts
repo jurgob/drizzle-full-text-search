@@ -15,10 +15,5 @@ export const cases = pgTable("cases", {
   contentSearch: tsVector("content_search").generatedAlwaysAs(
     (): SQL => sql`to_tsvector('english', ${cases.vin} || ' ' || ${cases.name} || ' ' || ${cases.surname})`
   ),
-},
-(table) => {
-  return [{
-    idx: index("idx_content_search").using("gin", table.contentSearch),
-  }]
 }
 );
