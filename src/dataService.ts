@@ -22,14 +22,14 @@ export async function createDataService() {
 
     const searchCaseFuzzy = async (query: string) => {
         const queryTerms = query.split(" ").join(" | ");
-        const queryILIKEQuery = query.split(" ")
-            .map(term => sql`content ILIKE ${'%' + term + '%'}`)
-        const callback = (acc: SQL, condition: SQL) => { return acc ? sql`${acc} OR ${condition}` : condition }
-        const combinedIlikeCondition = queryILIKEQuery
-            .reduce(
-                callback, 
-                sql``
-            );
+        // const queryILIKEQuery = query.split(" ")
+        //     .map(term => sql`content ILIKE ${'%' + term + '%'}`)
+        // const callback = (acc: SQL, condition: SQL) => { return acc ? sql`${acc} OR ${condition}` : condition }
+        // const combinedIlikeCondition = queryILIKEQuery
+        //     .reduce(
+        //         callback, 
+        //         sql``
+        //     );
         // console.log(`queryILIKEQuery`, queryILIKEQuery)
         const results = await db
             .select()
